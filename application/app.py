@@ -15,9 +15,31 @@ def index():
     return _prepare_response(body.decode('utf-8'))
 
 def _prepare_response(body):
-    task = json.loads(body)["task"]
+    print(body)
+    json_object = json.loads(body)
+
+    #задача из Pyrus подлежащая сохранению
+    task = json_object["task"]
+
+    #id бота обрабатывающего запрос
+    user_id = json_object["user_id"]
+
+    #отбор нужных полей задачи для сохранения + id бота
+    clinicalRecord = {
+        "task": {
+            "id": task["id"],
+            "text": task["text"],
+            "create_date": task["create_date"],
+            "last_modified_date": task["last_modified_date"],
+            "author": task["author"],
+            "form_id": task["form_id"],
+            "fields": task["fields"]
+        },
+        "user_id": user_id
+    }
+
     task_author = task["author"]["email"]
-    res = requests.post('http://127.0.0.1:3000/tests/endpoint', json=task)
+    res = requests.post('http://127.0.0.1:3000/tests/endpoint', json=clinicalRecord)
     print('response from server:',res.text)
 
     return "{{\"text\": \"Hello, {}. This task approved by bot.\", \"approval_choice\": \"approved\"}}".format(task_author)
