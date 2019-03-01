@@ -1,0 +1,19 @@
+{
+  "name": "middleware",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fabric-ca-client": "^1.4.0",
+    "fabric-client": "^1.4.0",
+    "fabric-network": "^1.4.0",
+    "grpc": "^1.18.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

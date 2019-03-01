@@ -1,2 +1,4 @@
 chaincode/.idea/
 ngrok
+node_modules/
+package-lock.json
