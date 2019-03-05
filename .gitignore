@@ -1,4 +1,11 @@
-chaincode/.idea/
 ngrok
-node_modules/
-package-lock.json
+
+chaincode/.idea/
+chaincode/vendor/
+chaincode/chaincode
+
+middleware/package-lock.json
+middleware/wallet
+middleware/hfc-key-store
+middleware/build
+middleware/node_modules
