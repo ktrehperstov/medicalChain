@@ -5,13 +5,14 @@ import (
 	"strconv"
 )
 
-func getClinicalRecordKey(stub shim.ChaincodeStubInterface, record ClinicalRecord) (string, error) {
-	task_id := strconv.Itoa(record.Task.Id)
+func getClinicalRecordKey(stub shim.ChaincodeStubInterface, taskId int) (string, error) {
+	task_id := strconv.Itoa(taskId)
 
 	tradeKey, err := stub.CreateCompositeKey("ClinicalRecord", []string{task_id})
 
 	if err != nil {
 		return "", err
 	}
+
 	return tradeKey, nil
 }
