@@ -41,7 +41,7 @@ def _prepare_response(body):
     res = requests.post('http://127.0.0.1:3000/tests/endpoint', json=clinicalRecord)
 
     print('response from server:',res.text)
-    return "{{\"text\": \"Hello, {}. This task approved by bot.\", \"approval_choice\": \"approved\"}}".format(task_author)
+    return "{{\"text\": \"{}\"}}".format(res.text)
 
 if __name__ == "__main__":
     app.run("127.0.0.1", 80)

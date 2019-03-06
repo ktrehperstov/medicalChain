@@ -19,7 +19,7 @@ const channelName = 'mychannel'
 const chaincodeId = 'mycc'
 
 const transactionName = 'getClinicalRecord'
-const arg = '32896731'
+const arg = '35122264'
 
 gateway.connect(ccpPath, gatewayOptions).then(_ => {
     console.log("Connecting...")
